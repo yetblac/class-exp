@@ -52,5 +52,3 @@ for i in range(len(lstAnimal)):
 # as a list. 
 # remeber when utilizing list ranges the first number "x" is inclusive while
 # the second number "y" is NOT inclusive in [x:y]
-
-
