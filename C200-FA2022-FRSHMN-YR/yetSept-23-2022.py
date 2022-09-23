@@ -48,4 +48,9 @@ for i in range(len(lstAnimal)):
 # left with 1,2,3,4,5 then we skip every "2" indexs because of :2] 
 # final result will be 1,3,5
 
+# we can also do print(lstAnimal(range(5))) to make have the output print
+# as a list. 
+# remeber when utilizing list ranges the first number "x" is inclusive while
+# the second number "y" is NOT inclusive in [x:y]
+
 
