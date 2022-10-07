@@ -7,6 +7,9 @@
 
 - 📫 How to reach me **jetblack@iu.edu**
 
+- ** git config --global user.email " " **
+- ** git config --global user.name " " **
+
 <h3 align="left">Connect with me:</h3>
 <p align="left">
 </p>
