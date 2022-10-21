@@ -128,6 +128,9 @@ def memoFact(n):
             d[n] = n * memoFact(n-1) # d[n] = n * memoFact(n-1) or if n = 5  # 5! or d[5] = 5 * 4!. In this case 4! will continue through the loop
     return d[n]
 
+print(memoFact(5))
+print(d)
+
 # in the above function we first check to see if n is a key in the dictonary, if it isnt, we will then check if n == 1
     # if so d[n] or the answer is 1
 # otherwise we will set d[n] which is esentially, 
@@ -135,8 +138,26 @@ def memoFact(n):
         # We are setting a value key to its corresponding factorial
 
 
-print(memoFact(5))
-
 print("##############################################################")
 
 
+# Now to try use memoization in the onlyIntegers Problem
+i = {}
+def memInt(mlst):
+    # Since lists are mutuable they can not be used as keys in a Dictionary
+    # instead we will be using a tuple
+    # for reminded a format for a dictionary is 
+    #         x =  {key:value, key1:value1, key2:value2} etc etc.
+    mtup = tuple(mlst)
+
+    if mtup not in i.keys():
+        if mlst == []:
+            i[mtup] = [] # return [] if the mlst is empty
+        elif type(mlst[0]) != int: 
+            i[mtup] =  memInt(mlst[1:]) # when the element is not an integer the list is simply sliced
+        else:
+            i[mtup] = [mlst[0]] + memInt(mlst[1:]) # in the case where the element is an integer the value is saved by mlst[0] and then the loop as ran again with a sliced list
+    return i[mtup]
+
+
+print(memInt(['a','b', 15,16,19,'jetson']))
